@@ -1,0 +1,31 @@
+<apex:page standardController="Tender__c" >
+    <apex:sectionHeader title="Tenders" subtitle="New Tenders"/>
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockSection columns="2"  title="Tender Details">
+              <apex:inputField value="{!Tender__c.Name}" label="Tender Name" required="true"/>
+              <apex:inputField value="{!Tender__c.Status__c}" required="true"/>
+              <apex:inputField value="{!Tender__c.Start_date__c}"/>
+              <apex:inputField value="{!Tender__c.End_Date__c}"/>                
+          </apex:pageBlockSection>
+         <apex:pageBlockSection columns="2"  title="End User Details">
+              <apex:inputField value="{!Tender__c.End_User_Region__c}"/>
+              <apex:inputField value="{!Tender__c.End_User_Country__c}"/>                
+          </apex:pageBlockSection>  
+      
+       <apex:pageBlockButtons location="bottom">
+           <apex:commandButton value="Save and Next" action="{!Save}" oncomplete="test();"/>
+           <apex:commandButton value="Cancel" action="{!Cancel}"/>
+       </apex:pageBlockButtons>
+     </apex:pageBlock> 
+  </apex:form>
+  
+  <script type="text/javascript">
+  
+  function test(){
+  alert('This is test alert!');
+  window.location = 'https://c.ap2.visual.force.com/apex/BudgetPage';
+  }
+  </script>
+  
+</apex:page>
