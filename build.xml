@@ -1,6 +1,6 @@
 <project default="test" basedir="." xmlns:sf="antlib:com.salesforce">
 
-    <property file="build-ji.properties"/>
+    <property file="build.properties"/>
     <property environment="env"/>
 
 	<target name="test">
